@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Home</title>
+</head>
+<body>
+    {{> partials/header}}
+    <div id="container">
+        <div id="postsHeader">
+            <h2>Posts</h2>
+            <form action="/posts">
+                <select name="category">
+                    <option value="">Show All</option>
+                    <option>Javascript</option>
+                    <option>Python</option>
+                    <option>Dart</option>
+                    <option>Misc</option>
+                </select>
+                <button>Filter Posts</button>
+            </form>
+        </div>
+        {{# posts }}
+            {{> partials/post}}
+        {{/ posts }}
+        {{^ posts}}
+            <h3>No Posts Found</h3>
+        {{/ posts}}
+    </div>
+</body>
+</html>

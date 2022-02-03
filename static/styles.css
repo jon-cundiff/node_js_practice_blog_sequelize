@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    padding: 1em 2em 0.5em;
+    display: flex;
+    column-gap: 2em;
+    background-color: rgba(200, 200, 255, 0.2);
+}
+
+#container {
+    margin: 1em;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5em;
+    border: 2px solid aqua;
+    box-shadow: 3px 3px 4px rgba(200, 200, 255, 0.7);
+}
+
+.post {
+    padding: 2em;
+    border: 3px dashed navy;
+}
+
+#postsHeader {
+    display: flex;
+    align-items: center;
+}
+
+#postsHeader form {
+    margin-left: auto;
+}
