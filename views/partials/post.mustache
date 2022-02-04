@@ -1,4 +1,4 @@
-<div class="post">
+<div class="post" id="{{id}}">
     <h3>{{title}}</h3>
     <i>{{category}}</i>
     <p>{{body}}</p>
@@ -6,4 +6,27 @@
     <form method="POST" action="/posts/{{id}}/delete" class="form">
         <button>Delete Post</button>
     </form>
+    <details>
+        <summary>Comments ({{comments.length}})</summary>
+            {{# comments}}
+                <div class="comment">
+                    <h2>{{title}}</h2>
+                    <p>{{body}}</p>
+                    <form method="POST" action="/posts/{{post_id}}/delete-comment/{{id}}" class="form">
+                        <button>Delete Comment</button>
+                    </form>
+                </div>
+            {{/ comments}}
+            {{^ comments}}
+                <h2>No comments</h2>
+            {{/ comments}}
+            <hr>
+            <h3>Leave a Comment</h3>
+            <form method="post" action="/posts/{{id}}/add-comment" class="form new-comment">
+                <input type="text" name="title" placeholder="Comment Title"required>
+                <textarea name="body" cols="30" rows="5" placeholder="Comment Body" required></textarea>
+                <button>Post Comment</button>
+            </form>
+
+    </details>
 </div>

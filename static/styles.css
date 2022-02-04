@@ -6,6 +6,11 @@ body {
     margin: 0;
     padding: 0;
 }
+#page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
 #header {
     padding: 1em 2em 0.5em;
@@ -14,6 +19,10 @@ body {
     background-color: rgba(200, 200, 255, 0.2);
 }
 
+#footer {
+    margin-top: auto;
+    background-color: rgba(200, 200, 255, 0.2);
+}
 #container {
     margin: 1em;
     padding: 2em;
@@ -25,6 +34,9 @@ body {
 }
 
 .post {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.8em;
     padding: 2em;
     border: 3px dashed navy;
 }
@@ -36,4 +48,10 @@ body {
 
 #postsHeader form {
     margin-left: auto;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.6em;
 }

@@ -8,20 +8,23 @@
     <title>Home</title>
 </head>
 <body>
-    {{> partials/header}}
-    <div id="container">
-        <form method="POST" action="/posts/create" class="form">
-            <input type="text" name="title" placeholder="title" required>
-            <input type="text" name="body" placeholder="body"required>
-            <select name="category" required>
-                <option value="">Select a Category</option>
-                <option>Javascript</option>
-                <option>Python</option>
-                <option>Dart</option>
-                <option>Misc</option>
-            </select>
-            <button>Create Post</button>
-        </form>
+    <div id="page">
+        {{> partials/header}}
+        <div id="container">
+            <form method="POST" action="/posts/create" class="form">
+                <input type="text" name="title" placeholder="title" required>
+                <textarea name="body" placeholder="body" cols="30" rows="5" required></textarea>
+                <select name="category" required>
+                    <option value="">Select a Category</option>
+                    <option>Javascript</option>
+                    <option>Python</option>
+                    <option>Dart</option>
+                    <option>Misc</option>
+                </select>
+                <button>Create Post</button>
+            </form>
+        </div>
+        {{> partials/footer}}
     </div>
 </body>
 </html>

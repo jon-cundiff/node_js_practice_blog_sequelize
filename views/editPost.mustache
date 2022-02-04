@@ -8,20 +8,23 @@
     <title>Home</title>
 </head>
 <body>
-    {{> partials/header}}
-    <div id="container">
-        <form method="POST" action="/posts/{{post.id}}/edit" class="form">
-            <input type="text" name="title" value="{{post.title}}" required>
-            <input type="text" name="body" value="{{post.body}}" required>
-            <select name="category" value="{{post.category}}" required>
-                <option value="">Select a Category</option>
-                <option>Javascript</option>
-                <option>Python</option>
-                <option>Dart</option>
-                <option>Misc</option>
-            </select>
-            <button>Update Post</button>
-        </form>
+    <div id="page">
+        {{> partials/header}}
+        <div id="container">
+            <form method="POST" action="/posts/{{post.id}}/edit" class="form">
+                <input type="text" name="title" value="{{post.title}}" required>
+                <textarea name="body" placeholder="body" cols="30" rows="5" required>{{post.body}}</textarea>
+                <select name="category" value="{{post.category}}" required>
+                    <option value="">Select a Category</option>
+                    <option>Javascript</option>
+                    <option>Python</option>
+                    <option>Dart</option>
+                    <option>Misc</option>
+                </select>
+                <button>Update Post</button>
+            </form>
+        </div>
+        {{> partials/footer}}
     </div>
 </body>
 </html>
